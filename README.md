@@ -71,7 +71,11 @@ Run `test.py` to test the model. You can test the customized channel model and t
       --num_test NUM_TEST   number of test cirs
 
 ## Example figures
-CIR comparison
+### CIR comparison
 ![cir](example1.png)
-ToA estimation
+
+### ToA estimation
 ![toa](example2.png)
+
+## Reference 
+> Yao-shan Hsiao*, Mingyu Yang*, Hun-Seok Kim, "Super-Resolution Time-of-Arrival Estimation using Neural Networks", EUSIPCO 2020
