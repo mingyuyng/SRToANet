@@ -87,8 +87,8 @@ def plot_cir(cir_l, cir_h, cir_h_fake, pred_coarse, pred_fine, gt, folder_path):
         cir_h_imag = cir_h[i,1,:]
         cir_h_amp = np.sqrt(cir_h_real**2 + cir_h_imag**2)
         
-        focus = int(pred_fine[i]//3.75) + np.arange(-30, 30)
-        plt.figure()
+        focus = int(pred_fine[i]//3.75) + np.arange(-np.minimum(int(pred_fine[i]//3.75),30), np.minimum(30, cir_l.shape[2]-int(pred_fine[i]//3.75)))
+        plt.figure(figsize=(12, 6))
         plt.subplot(121)
         line1,= plt.plot(x[focus], cir_l_amp[focus])
         line2,= plt.plot(x[focus], cir_h_amp[focus])
@@ -106,14 +106,14 @@ def plot_cir(cir_l, cir_h, cir_h_fake, pred_coarse, pred_fine, gt, folder_path):
         save_path = os.path.join(folder_path, str(i)+'_cir.png')
         plt.savefig(save_path)
         
-        plt.figure()
+        plt.figure(figsize=(8, 6))
         line1,= plt.plot(x[focus], cir_h_fake_amp[focus])
         line2,= plt.plot(pred_coarse[i]*np.ones(100), np.arange(0, 1, 0.01), linestyle='--')
         line3,= plt.plot(pred_fine[i]*np.ones(100), np.arange(0, 1, 0.01), linestyle='--')
         line4,= plt.plot(gt[i]*np.ones(100), np.arange(0, 1, 0.01), linestyle='--', color='black')
         plt.xlabel('Distance')
         plt.ylabel('Amplitude')
-        plt.legend([line1, line2, line3, line4], ['Original noisy low resolution CIR', 'coarse estimation', 'fine estimation', 'ground truth'])
+        plt.legend([line1, line2, line3, line4], ['De-noised high resolution CIR', 'coarse estimation', 'fine estimation', 'ground truth'])
         save_path = os.path.join(folder_path, str(i)+'_toa.png')
         plt.savefig(save_path)
 
