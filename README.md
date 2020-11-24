@@ -69,3 +69,9 @@ Run `test.py` to test the model. You can test the customized channel model and t
                         regressor
       --device {cpu,gpu}    choose the device to run the code
       --num_test NUM_TEST   number of test cirs
+
+## Example figures
+CIR comparison
+![cir](example1.png)
+ToA estimation
+![toa](example2.png)
