@@ -7,6 +7,9 @@ All the information of channels (time delays, complex attenuation) are stored in
 
 Simply run `data/CIR_Generation.m` will generate the dataset for training and testing, stored in `data/traindata` and `data/testdata` respectively
 
+## Interpolation module
+
+Require installation of Torchinterp1d. See [https://github.com/aliutkus/torchinterp1d](https://github.com/aliutkus/torchinterp1d)
 ## Train the model
 
 Run `train.py` to train the model. It will first train the super-resolution network and then the two regressors
