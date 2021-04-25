@@ -1,5 +1,6 @@
 # SRToANet
 
+Codes for "Super-Resolution ToA estimation using Neural Networks", EUSIPCO 2020
 
 ## Data Preperation
 
